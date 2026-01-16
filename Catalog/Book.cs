@@ -12,10 +12,7 @@ namespace Catalog
         public string Author;
         public int Year;
 
-        public bool IsOld()
-        {
-            return Year < DateTime.Now.Year - 50;
-        }
+        public bool IsOld => Year < 2006;
 
         public Book(string title, string author, int year)
         {
@@ -27,7 +24,7 @@ namespace Catalog
         public void DisplayInfo()
         {
             string oldMarker;
-            if (IsOld())
+            if (IsOld)
             {
                 oldMarker = " [Старая]";
             }
